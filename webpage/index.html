@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Earthquakes & Tsunamis</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../spinning_globe/inspector.css">
+        <script type="module">
+            import define from "../spinning_globe/index.js";
+            import {Runtime, Library, Inspector} from "../spinning_globe/runtime.js";
+
+            const runtime = new Runtime();
+            const main = runtime.module(define, Inspector.into(document.getElementById("globe-spinning")));
+        </script>
+    </head>
+    <style>
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust the height as needed */
+        }
+    </style>
+    <body class="d-flex flex-column h-100">
+        
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg" style="background-color:rgb(245, 225, 199)">
+                <div class="container px-5">
+                    <a class="navbar-brand" style="font-family:Libre Baskerville; font-size:15px;" href="index.html">Visual Analytics for Business Intelligence</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../histogram_filter/index.html">Earthquakes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="tsunamis.html">Tsunamis</a></li>
+                            <li class="nav-item"><a class="nav-link" href="relation.html">Relation</a></li>
+                            
+
+                            <li class="nav-item"><a class="nav-link" href="../realtime/index.html">Realtime</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../earthquake-visualization-main/earthquake-visualization-main/index.html">Interactive Map</a></li>
+                            <li class="nav-item"><a class="nav-link" href="social.html">Social Factors</a></li>
+ 
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Header-->
+            <header class="py-3" style="background-color:rgb(90, 17, 17)">
+                <div class="container px-2">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-6 fw-bolder text-white mb-2" style="font-family:Libre Baskerville";">Enhancing Disaster Preparedness: <br> Earthquake & Tsunami Visualization</h1>
+                                <br>
+                                <p class="lead fw-normal mb-4" style="color:rgb(247, 239, 229)">Analyzing Earthquakes in real-time, and its relation to tsunamis, in an effort to educate and raise awareness on the severity of earthquakes.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-4" src="../earthquake.jpg" alt="..." /></div>
+                    </div>
+                </div>
+            </header>
+
+            
+            <!-- Features section-->
+            <section class="py-5" id="features">
+                <div class="container px-5 my-3">
+                    <div class="row">
+                        <div style="margin: auto; font-size:19px;">There are on average 20,000 earthquakes per year, causing nearly 2.3
+                            million deaths since 1990, where 28 percent of these deaths were due
+                            to secondary effects like tsunamis. Earthquakes and tsunamis can
+                            cause huge catastrophes, even as countries now are equipped with
+                            higher disaster preparedness. To minimize the extent of damage, we
+                            need to first know more about these disasters. Through innovative
+                            and deep analysis and visualization, our project aims to enhance
+                            the disaster preparedness of countries and inspire action across
+                            countries to mitigate the devastating effects of earthquakes.</div>
+                        <div class="parent">                
+                            <div><h2>Earthquakes in the past week: </h2>
+                                The size of the circles represent the magnitude of the quakes. Data taken from USGS.     </div>  
+                                <div id="globe-spinning" class="child"></div>       
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Let's first understand what are earthquakes and tsunamis.</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <h2 class="h5">How Earthquakes form:</h2>
+                                    <p class="mb-0">The earth consists of tectonic plates. These plates are always moving. The edges of these plates are rough and the tectonic plates could get stuck, while the rest of the plate continues to move. During this period the energy that is normally used to keep the plates moving is stacked up. If the rest of the plate has moved far enough and the plates have overcome their friction, then the plates are not stuck anymore and all the stored energy goes as seismic waves to all directions. These waves will shake the ground and an earthquake will occur. </p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <img class="img-fluid rounded-3 my-4" src="../tectonic_plates.png" alt="..." />
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">How Tsunamis form:</h2>
+                                    <p class="mb-0">A tsunami is a series of waves that are crossing the oceans with a high speed. This speed gets larger when the water depth increases. If the water depth is 4.5 km then the tsunami speed can go up to 900 km/h. If the water depth decreases then the velocity of the tsunami decreases. If these waves hit a coast, then a runup will occur. 
+                                        <br> A run-up is the vertical increase in the height of the water level. This increase could go up to 30 meters and higher in extreme cases. The most frequent cause are the earthquakes. The seismic waves that went through the earth are then given to the ocean, and the waves arise. In this study, we look at tsunamis caused by earthquakes and their relation.</p>
+                                </div>
+                                <div class="col h-100 mt-5">
+                                    <img class="img-fluid rounded-3 my-4" src="../tsunami.jpg" alt="..." />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

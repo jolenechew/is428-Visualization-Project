@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
+
+  <title>dc.js Experiment</title>
+
+  <script src='d3.js' type='text/javascript'></script>
+  <script src='crossfilter.js' type='text/javascript'></script>
+  <script src='dc.js' type='text/javascript'></script>
+  <script src='jquery-1.9.1.min.js' type='text/javascript'></script>
+  <script src='bootstrap.min.js' type='text/javascript'></script>
+
+  <link href='bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='dc.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+
+  <style type="text/css"></style>
+</head>
+
+<body>
+  
+
+<div class='container' id='main-container'>
+<div class='content'>
+<div class='container' style='font: 12px sans-serif;'>
+  <div class="row">
+    <div class="col-lg-12 text-center mt-4" style="margin-top:20px;">
+      <h3 style="font-family:Libre Baskerville;font-weight:lighter; margin:0; padding:0;">Visualizing and Analyzing Earthquakes and their attributes</h3>
+      <h2 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:17px; font-weight:lighter; margin:0; padding:0; color:rgb(78, 75, 75);" class="text-muted">Exploring the relationship between earthquake magnitude, focal depth, casualties etc.</h2>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">Geographical Distribution of Earthquakes since 1900</h3>
+    <div class='tableauPlaceholder' id='viz1712856603130' style='position: relative'><noscript><a href='#'><img alt='Pacific Ring of Fire (A) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;PacificRingofFireA&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project_WorkbookWhitebg&#47;PacificRingofFireA' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;PacificRingofFireA&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1712856603130');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    
+
+    <br>
+    <br>
+
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> 90% of earthquakes lie on the Pacific Ring of Fire. In the map above, the higher colour intensity of the plots depict the stronger earthquake magnitudes. The Ring of Fire, also referred to as the Circum-Pacific Belt, is a path along the Pacific Ocean characterized by active volcanoes and frequent earthquakes. It is where tectonic plates of the earth collide.  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">Overview of Significant Earthquakes (Magnitude > 5.0) & Damages</h3>
+      <div class='tableauPlaceholder' id='viz1712856669964' style='position: relative'><noscript><a href='#'><img alt='Earthquakes Overview (B) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;EarthquakesOverviewB&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project_WorkbookWhitebg&#47;EarthquakesOverviewB' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;EarthquakesOverviewB&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1712856669964');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1327px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;">Earthquakes are mostly aligned along the Pacific Ring of Fire and their detection was greatly improved when the GPS was developed.
+      China, Japan, and Indonesia are the top 3 countries most prone to earthquakes.
+      China has suffered the highest number of deaths at 2,074,881, whereas Japan has suffered the most amount of damages at $180,561 million.
+      </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> Now let's dive deeper into the attributes of an earthquake, and the power that each attribute have in affecting the extent of damage.</div>
+    <br>
+    <br>
+    <div>
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">A Gantt chart showing Earthquake events based on Magnitude and Depth.</h3>
+
+      <div class='tableauPlaceholder' id='viz1711901190952' style='position: relative'><noscript><a href='#'><img alt='Depth vs Magnitude ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;DepthvsMagnitude2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project_WorkbookWhitebg&#47;DepthvsMagnitude2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project_WorkbookWhitebg&#47;DepthvsMagnitude2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1711901190952');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <br>
+    <br>
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> From this, we can infer that earthquakes with higher magnitude tend to have a shallower depth. Note that the x-axis showing Depth is reversed to illustrate the "Depth" effect.</div>
+    
+    <br>
+    <br>
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> With this, we now investigate the effects that focal depth and magnitude have on the impact of an earthquake and its aftermath.</div>
+
+    <br>
+    <br>
+    <div>
+
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">Relationship between Focal Depth, Deaths, and Damages</h3>
+      <div class='tableauPlaceholder' id='viz1711901099956' style='position: relative'><noscript><a href='#'><img alt='Relationship between Focal Depth and Damages ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenFocalDepthandDamages&#47;RelationshipbetweenFocalDepthandDamages&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='RelationshipbetweenFocalDepthandDamages&#47;RelationshipbetweenFocalDepthandDamages' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenFocalDepthandDamages&#47;RelationshipbetweenFocalDepthandDamages&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1711901099956');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <br>
+    <br>
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;">Focal Depth is the depth within the Earth's crust where an earthquake originates, measured from the surface to the initial rupture point along the fault. <b>Shallower earthquakes</b> may cause <b>more surface damage</b>, while deeper ones can propagate seismic waves over larger areas. In this plot, the points in red signify shallow focal depth, while the points in green signify deeper focal depth. We observe that earthquakes with lower focal depth tend to have higher number of deaths and houses damaged.</div>
+
+    <br>
+    <br>
+    <br>
+    <div>
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">Relationship between Magnitude and Casualties</h3>
+      <div class='tableauPlaceholder' id='viz1711902612443' style='position: relative'><noscript><a href='#'><img alt='Magnitude vs Casualties ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenMagnitudesandCasualties&#47;MagnitudevsCasualties&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='RelationshipbetweenMagnitudesandCasualties&#47;MagnitudevsCasualties' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenMagnitudesandCasualties&#47;MagnitudevsCasualties&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1711902612443');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500">Lastly, here's an overview of the attributes of an earthquake, including its causes, focal depth, and magnitude.</h3>
+      <br>
+      <div class='tableauPlaceholder' id='viz1711904189512' style='position: relative'><noscript><a href='#'><img alt='Attributes of Earthquakes: Overview ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenFocalDepthandDamages_17119040641400&#47;AttributeofanEarthquake&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='RelationshipbetweenFocalDepthandDamages_17119040641400&#47;AttributeofanEarthquake' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;RelationshipbetweenFocalDepthandDamages_17119040641400&#47;AttributeofanEarthquake&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1711904189512');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <br>
+    <br>
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> </div>
+    <br>
+
+    <h2 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-weight:500">Exploring with d3.js...</h2>
+
+    <div style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:18px;"> Taking a random week in the month of July 2023, we visualized the earthquakes and their distribution across Magnitude, Depth, and Hour.</div>
+
+  </div>
+  <br>
+  <div class='row'>
+    <div class='span12'>
+      <h3 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:22px; font-weight:500; ">Earthquakes in 2023</h3>
+      <div class='row'>
+        <div class='pie-graph span6' id='dc-magnitude-chart'>
+        <h4 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:17px; ">Events by Magnitude</h4>
+        </div>
+        <div class='pie-graph span6' id='dc-depth-chart'>
+	      <h4 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:17px; ">Events by Depth (km)</h4>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='span12' id='dc-time-chart'>
+      <h4 style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size:17px; ">Events per hour</h4>
+    </div>
+  </div>
+
+  <div class='row'>
+      <div class='pie-graph span12'>
+          <table class='table table-hover' id='dc-table-graph'>
+            <thead>
+              <tr class='header'>
+                <th>DTG</th>
+                <th>Lat</th>
+                <th>Long</th>
+                <th>Depth</th>
+                <th>Magnitude</th>
+                <th>Google Map</th>
+                <th>OSM Map</th>
+              </tr>
+            </thead>
+          </table>
+      </div>
+      <H5>Generated with 
+      <a href="http://nickqizhu.github.io/dc.js/">dc.js</a>,
+      <a href="http://square.github.io/crossfilter/">crossfilter</a>, 
+      <a href="http://d3js.org/">d3.js</a> and 
+      <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+    </H5>
+    <p>Earthquake data via <a href="http://geonet.org.nz">Geonet</a>.</p>
+  </div>
+
+  <br>
+  <br>
+
+
+</div>
+</div>
+</div>
+  
+<script>
+  
+/**********************************
+* Step0: Load data from json file *
+**********************************/
+
+// load data from a csv file
+d3.csv("./query.csv", function (data) {
+
+  // format our data
+  var dtgFormat = d3.time.format("%Y-%m-%dT%H:%M:%S");
+  
+  data.forEach(function(d) { 
+    d.dtg   = dtgFormat.parse(d.time.substr(0,19)); 
+    d.lat   = +d.latitude;
+    d.long  = +d.longitude;
+    d.mag   = d3.round(+d.mag,1);
+    d.depth = d3.round(+d.depth,0);
+  });
+
+/******************************************************
+* Step1: Create the dc.js chart objects & ling to div *
+******************************************************/
+
+  var magnitudeChart = dc.barChart("#dc-magnitude-chart");
+  var depthChart = dc.barChart("#dc-depth-chart");
+  var timeChart = dc.lineChart("#dc-time-chart");
+  var dataTable = dc.dataTable("#dc-table-graph");
+
+/****************************************
+* 	Run the data through crossfilter    *
+****************************************/
+
+  var facts = crossfilter(data);  // Gets our 'facts' into crossfilter
+
+/******************************************************
+* Create the Dimensions                               *
+* A dimension is something to group or filter by.     *
+* Crossfilter can filter by exact value, or by range. *
+******************************************************/
+
+  // for Magnitude
+  var magValue = facts.dimension(function (d) {
+    return d.mag;       // group or filter by magnitude
+  });
+  var magValueGroupSum = magValue.group()
+    .reduceSum(function(d) { return d.mag; });	// sums the magnitudes per magnitude
+  var magValueGroupCount = magValue.group()
+    .reduceCount(function(d) { return d.mag; }) // counts the number of the facts by magnitude
+
+  // For datatable
+  var timeDimension = facts.dimension(function (d) {
+    return d.dtg;
+  }); // group or filter by time
+
+  // for Depth
+  var depthValue = facts.dimension(function (d) {
+    return d.depth;
+  });
+  var depthValueGroup = depthValue.group();
+  
+  // define a daily volume Dimension
+  var volumeByDay = facts.dimension(function(d) {
+    return d3.time.hour(d.dtg);
+  });
+  // map/reduce to group sum
+  var volumeByDayGroup = volumeByDay.group()
+    .reduceCount(function(d) { return d.dtg; });
+
+/***************************************
+* 	Step4: Create the Visualisations   *
+***************************************/
+  
+  // Magnitide Bar Graph Summed
+  magnitudeChart.width(480)
+    .height(150)
+    .margins({top: 10, right: 10, bottom: 20, left: 40})
+    .dimension(magValue)								// the values across the x axis
+    .group(magValueGroupSum)							// the values on the y axis
+	.transitionDuration(500)
+    .centerBar(true)	
+	.gap(56)                                            // bar width Keep increasing to get right then back off.
+    .x(d3.scale.linear().domain([0.5, 7.5]))
+	.elasticY(true)
+	.xAxis().tickFormat(function(v) {return v;});	
+
+  // Depth bar graph
+  depthChart.width(480)
+    .height(150)
+    .margins({top: 10, right: 10, bottom: 20, left: 40})
+    .dimension(depthValue)
+    .group(depthValueGroup)
+	.transitionDuration(500)
+    .centerBar(true)	
+	.gap(1)                    // bar width Keep increasing to get right then back off.
+    .x(d3.scale.linear().domain([0, 100]))
+	.elasticY(true)
+	.xAxis().tickFormat(function(v) {return v;});
+
+  // time graph
+  timeChart.width(960)
+    .height(100)
+    .margins({top: 10, right: 10, bottom: 20, left: 40})
+    .dimension(volumeByDay)
+    .group(volumeByDayGroup)
+    .transitionDuration(500)
+	.elasticY(true)
+    .x(d3.time.scale().domain([new Date(2023, 6, 18), new Date(2023, 6, 24)])) // scale and domain of the graph
+    .xAxis();
+
+  // Table of earthquake data
+  dataTable.width(960).height(800)
+    .dimension(timeDimension)
+	.group(function(d) { return "List of all earthquakes corresponding to the filters"
+	 })
+	.size(10)							// number of rows to return
+    .columns([
+      function(d) { return d.dtg; },
+      function(d) { return d.lat; },
+      function(d) { return d.long; },
+      function(d) { return d.depth; },
+      function(d) { return d.mag; },
+	  function(d) { return '<a href=\"http://maps.google.com/maps?z=11&t=m&q=loc:' + d.lat + '+' + d.long +"\" target=\"_blank\">Google Map</a>"},
+	  function(d) { return '<a href=\"http://www.openstreetmap.org/?mlat=' + d.lat + '&mlon=' + d.long +'&zoom=11'+ "\" target=\"_blank\"> OSM Map</a>"}
+    ])
+    .sortBy(function(d){ return d.dtg; })
+    .order(d3.ascending);
+
+/****************************
+* Step6: Render the Charts  *
+****************************/
+			
+  dc.renderAll();
+  
+});
+  
+</script>
+    
+</body>
+</html>

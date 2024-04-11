@@ -1,0 +1,14 @@
+{
+  "name": "@emiliendupont/earthquake-3d-globe",
+  "main": "bf5b637485898a5b@69.js",
+  "version": "69.0.0",
+  "homepage": "https://observablehq.com/@emiliendupont/earthquake-3d-globe",
+  "author": {
+    "name": "Emilien Dupont",
+    "url": "https://observablehq.com/@emiliendupont"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
